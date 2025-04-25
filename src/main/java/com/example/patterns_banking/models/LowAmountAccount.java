@@ -11,12 +11,22 @@ import lombok.NoArgsConstructor;
 @Entity
 public class LowAmountAccount extends Account {
   private static final double DEPOSIT_FEE_RATE = 0.01; // 1% fee for deposits
-  private static final double FREE_TRANSACTION_THRESHOLD = 100.0; // Si el monto supera este valor, se le debe descontar: DEPOSIT_FEE_RATE, sino, el deposito es gratis
+  private static final double FREE_TRANSACTION_THRESHOLD = 100; // Si el monto supera este valor, se le debe descontar: DEPOSIT_FEE_RATE, sino, el deposito es gratis
+
+//  public Double calculateDepositFee(Double amount) {
+//    return amount * DEPOSIT_FEE_RATE;
+//  }
 
   @Override
   public Double calculateDepositFee(Double amount) {
+    if(amount < FREE_TRANSACTION_THRESHOLD) {
+      return 0.0 ;
+    }
+    return amount * DEPOSIT_FEE_RATE ;
+  }
 //    Realizar logica de este método
 //    Crear el factory para este tipo de cuentas
 //    Crear un command para consultar todas las cuentas
-  }
+
 }
+

@@ -19,4 +19,6 @@ public class SavingsAccount extends Account {
   public Double calculateDepositFee(Double amount) {
     return amount * DEPOSIT_FEE_RATE;
   }
+
+
 }

@@ -27,4 +27,11 @@ public abstract class Account {
     double fee = calculateDepositFee(amount);
     this.balance += amount - fee;
   }
+  // Mio todo creo debe ser asi
+//  public abstract Double calculateTransferFee(Double amount);
+//  public void descuento(Double amount) {
+//    double fee = calculateTransferFee(amount);
+//    this.balance += amount - fee;
+//  }
 }
+
